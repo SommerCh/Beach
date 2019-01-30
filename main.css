@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#gridlayout {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 400px 500px 150px 1fr;
+    grid-template-rows: 200px 200px 1fr 1fr;
+    overflow: hidden;
+}
+
+.beach {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+
+.krans {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    transition: 0.5s ease-in-out;
+}
+
+.krans:hover {
+    transform: rotate(360deg);
+}
+
+.skygge {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.stjerne {
+    grid-column: 3/-1;
+    grid-row: 2/3;
+    opacity: 0.5;
+    transition: 0.5s
+}
+
+.stjerne:hover {
+    opacity: 1;
+    animation: stjerne 0.5s ease-in;
+    cursor: pointer;
+}
+
+@keyframes stjerne {
+    0% {
+        transform: translateY(10%);
+        transform: scale(1.5)
+    }
+
+    40% {
+        transform: translateX(50%);
+    }
+
+    60% {
+        transform: translateY(0%);
+    }
+
+    80% {
+        transform: translateX(30%);
+    }
+
+    100% {
+        transform: translateY(50%);
+        transform: scale(1.1);
+    }
+}
+
+
+
+.surf {
+    grid-column: 4/-1;
+    grid-row: 1/3;
+    width: 100%;
+    animation: surf 2s ease-in-out forwards;
+}
+
+.surf:hover {
+    animation: surfhover 1s ease-in-out;
+    cursor: pointer;
+}
+
+
+@keyframes surfhover {
+    0% {
+        transform: translateX(50%)
+    }
+
+    100% {
+        transform: translateX(0%)
+    }
+}
+
+@keyframes surf {
+    0% {
+        transform: translateX(0%)
+    }
+
+    100% {
+        transform: translateX(50%)
+    }
+}
